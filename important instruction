@@ -1,10 +1,14 @@
-To ensure the integrity and manageability of projects on GitHub, it's essential to adopt a structured workflow when making changes to the codebase. One of the best practices involves using branches effectively to isolate development work without affecting the main codebase. Below, I will explain a set of important instructions for using branches in GitHub, which includes creating a separate branch before editing code and then merging these changes back into the main branch.
+To ensure the integrity and manageability of projects on GitHub, it's essential to adopt 
+a structured workflow when making changes to the codebase. One of the best practices involves using branches effectively to isolate development ,
+work without affecting the main codebase. Below, I will explain a set of important instructions for using branches in GitHub, which includes creating
+a separate branch before editing code and then merging these changes back into the main branch.
 
 ### Important Instructions for Using GitHub Branches
 
 #### 1. **Create a New Branch**
 
-Before you start making any changes to the code, you should create a new branch. This keeps your changes separate from the main branch (often called `main` or `master`), allowing for independent development and testing.
+Before you start making any changes to the code, you should create a new branch. This keeps your changes separate from the main branch 
+(often called `main` or `master`), allowing for independent development and testing.
 
 **Steps to Create a Branch:**
 - Navigate to your repository on GitHub.
@@ -67,4 +71,5 @@ git push origin --delete [branch-name]  # Deletes the branch remotely
 
 #### Summary
 
-By following these instructions, you can maintain a clean and manageable codebase, facilitate collaboration, reduce conflicts, and ensure that changes are thoroughly reviewed before being incorporated into the main project. Branching is a core feature in Git and GitHub that supports team collaboration and project organization.
+By following these instructions, you can maintain a clean and manageable codebase, facilitate collaboration, reduce conflicts, 
+and ensure that changes are thoroughly reviewed before being incorporated into the main project. Branching is a core feature in Git and GitHub that supports team collaboration and project organization.
