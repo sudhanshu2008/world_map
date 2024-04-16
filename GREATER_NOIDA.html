@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b9397fc70217437a5c732cf2275876ed {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b9397fc70217437a5c732cf2275876ed" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b9397fc70217437a5c732cf2275876ed = L.map(
+                "map_b9397fc70217437a5c732cf2275876ed",
+                {
+                    center: [28.474388, 77.50399],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d9865078eff3c1e902cf6e496c8b29d0 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d9865078eff3c1e902cf6e496c8b29d0.addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+            var heat_map_b7c3a13e26a6197a33a029443a956286 = L.heatLayer(
+                [[28.474388, 77.50399, 1], [28.468024, 77.508675, 2]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            );
+        
+    
+            heat_map_b7c3a13e26a6197a33a029443a956286.addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+            var layer_control_8fb286e00fe21eb8f06b11c299831f6c_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_d9865078eff3c1e902cf6e496c8b29d0,
+                },
+                overlays :  {
+                    "Heatmap" : heat_map_b7c3a13e26a6197a33a029443a956286,
+                },
+            };
+            let layer_control_8fb286e00fe21eb8f06b11c299831f6c = L.control.layers(
+                layer_control_8fb286e00fe21eb8f06b11c299831f6c_layers.base_layers,
+                layer_control_8fb286e00fe21eb8f06b11c299831f6c_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_b9397fc70217437a5c732cf2275876ed);
+
+        
+    
+            var marker_3a859c866acf9fbbef4c0145db65ae27 = L.marker(
+                [28.474388, 77.50399],
+                {}
+            ).addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+            var icon_2e33bfca4d0a86b038787474f600019e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3a859c866acf9fbbef4c0145db65ae27.setIcon(icon_2e33bfca4d0a86b038787474f600019e);
+        
+    
+        var popup_d9061a793183230c6d8d0b33a5e53c53 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_59cfb6c0572ab80636d377d38bf08ebc = $(`<div id="html_59cfb6c0572ab80636d377d38bf08ebc" style="width: 100.0%; height: 100.0%;">Central Greater Noida</div>`)[0];
+                popup_d9061a793183230c6d8d0b33a5e53c53.setContent(html_59cfb6c0572ab80636d377d38bf08ebc);
+            
+        
+
+        marker_3a859c866acf9fbbef4c0145db65ae27.bindPopup(popup_d9061a793183230c6d8d0b33a5e53c53)
+        ;
+
+        
+    
+    
+            var marker_566ea637677ce488c3d2d7270c5edbbf = L.marker(
+                [28.3652, 77.5411],
+                {}
+            ).addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+            var icon_6d61c568c12fafabc873d9e34d199e21 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "house", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_566ea637677ce488c3d2d7270c5edbbf.setIcon(icon_6d61c568c12fafabc873d9e34d199e21);
+        
+    
+        var popup_571e7b1732696dcc0b27b6ef491b557b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4a2289ae5d722b692d794f02da676f0a = $(`<div id="html_4a2289ae5d722b692d794f02da676f0a" style="width: 100.0%; height: 100.0%;">Galgotias University</div>`)[0];
+                popup_571e7b1732696dcc0b27b6ef491b557b.setContent(html_4a2289ae5d722b692d794f02da676f0a);
+            
+        
+
+        marker_566ea637677ce488c3d2d7270c5edbbf.bindPopup(popup_571e7b1732696dcc0b27b6ef491b557b)
+        ;
+
+        
+    
+    
+            marker_566ea637677ce488c3d2d7270c5edbbf.bindTooltip(
+                `<div>
+                     Click for more info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_022ee55cffab33b1b1c7301f3c25b1f3 = L.marker(
+                [28.464916, 77.511367],
+                {}
+            ).addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+            var icon_871c4c64e60472ec9a4ef71248be488f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_022ee55cffab33b1b1c7301f3c25b1f3.setIcon(icon_871c4c64e60472ec9a4ef71248be488f);
+        
+    
+        var popup_8857f12b12747b368e4fbda6304147fd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3ce543b7afd2dd785e5e13746130ce08 = $(`<div id="html_3ce543b7afd2dd785e5e13746130ce08" style="width: 100.0%; height: 100.0%;">Pari Chowk</div>`)[0];
+                popup_8857f12b12747b368e4fbda6304147fd.setContent(html_3ce543b7afd2dd785e5e13746130ce08);
+            
+        
+
+        marker_022ee55cffab33b1b1c7301f3c25b1f3.bindPopup(popup_8857f12b12747b368e4fbda6304147fd)
+        ;
+
+        
+    
+    
+            var marker_c9e73b04e01550e51821f8a8667908ed = L.marker(
+                [28.3652, 77.5411],
+                {}
+            ).addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+            var icon_941af82ecd396a17997d3dbe3716ecf9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "house", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c9e73b04e01550e51821f8a8667908ed.setIcon(icon_941af82ecd396a17997d3dbe3716ecf9);
+        
+    
+        var popup_7b45c75b0d924ca786c34b48e91cbfd8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_71f48b17f5effa4649b39ca4ec005fae = $(`<div id="html_71f48b17f5effa4649b39ca4ec005fae" style="width: 100.0%; height: 100.0%;">Galgotias University</div>`)[0];
+                popup_7b45c75b0d924ca786c34b48e91cbfd8.setContent(html_71f48b17f5effa4649b39ca4ec005fae);
+            
+        
+
+        marker_c9e73b04e01550e51821f8a8667908ed.bindPopup(popup_7b45c75b0d924ca786c34b48e91cbfd8)
+        ;
+
+        
+    
+    
+            marker_c9e73b04e01550e51821f8a8667908ed.bindTooltip(
+                `<div>
+                     Click for more info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2b2dfe3b7d5c25dec73de3a6117b5a88 = L.marker(
+                [28.459497, 77.507551],
+                {}
+            ).addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+            var icon_f91ed4461958b832ecd8718d003bac06 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2b2dfe3b7d5c25dec73de3a6117b5a88.setIcon(icon_f91ed4461958b832ecd8718d003bac06);
+        
+    
+        var popup_7722004c50eafacf11fc25dc6cbf85f0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5cfd4a71f03c561f293250b19c3ea3b2 = $(`<div id="html_5cfd4a71f03c561f293250b19c3ea3b2" style="width: 100.0%; height: 100.0%;">Alpha 1</div>`)[0];
+                popup_7722004c50eafacf11fc25dc6cbf85f0.setContent(html_5cfd4a71f03c561f293250b19c3ea3b2);
+            
+        
+
+        marker_2b2dfe3b7d5c25dec73de3a6117b5a88.bindPopup(popup_7722004c50eafacf11fc25dc6cbf85f0)
+        ;
+
+        
+    
+    
+            var marker_a5e00b8b8be61d4d2d56216a9399d7ad = L.marker(
+                [28.3652, 77.5411],
+                {}
+            ).addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+            var icon_afd365f21185d98dcb92ecbe17158596 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "house", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a5e00b8b8be61d4d2d56216a9399d7ad.setIcon(icon_afd365f21185d98dcb92ecbe17158596);
+        
+    
+        var popup_e8441abdd17f8597384e776c42c51571 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_88f3e7b748c63f60256ad18485a4bb59 = $(`<div id="html_88f3e7b748c63f60256ad18485a4bb59" style="width: 100.0%; height: 100.0%;">Galgotias University</div>`)[0];
+                popup_e8441abdd17f8597384e776c42c51571.setContent(html_88f3e7b748c63f60256ad18485a4bb59);
+            
+        
+
+        marker_a5e00b8b8be61d4d2d56216a9399d7ad.bindPopup(popup_e8441abdd17f8597384e776c42c51571)
+        ;
+
+        
+    
+    
+            marker_a5e00b8b8be61d4d2d56216a9399d7ad.bindTooltip(
+                `<div>
+                     Click for more info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5595891b160c0eb7e000cabf6152270d = L.marker(
+                [28.482559, 77.481839],
+                {}
+            ).addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+            var icon_4dea184666f683ea331236e2bbb6aeae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5595891b160c0eb7e000cabf6152270d.setIcon(icon_4dea184666f683ea331236e2bbb6aeae);
+        
+    
+        var popup_32c3b9baee69313daa5ebf7c7ea6c4fe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6bd6ed41737c9019a7a59d8248145a35 = $(`<div id="html_6bd6ed41737c9019a7a59d8248145a35" style="width: 100.0%; height: 100.0%;">Knowledge Park</div>`)[0];
+                popup_32c3b9baee69313daa5ebf7c7ea6c4fe.setContent(html_6bd6ed41737c9019a7a59d8248145a35);
+            
+        
+
+        marker_5595891b160c0eb7e000cabf6152270d.bindPopup(popup_32c3b9baee69313daa5ebf7c7ea6c4fe)
+        ;
+
+        
+    
+    
+            var marker_b16f6f4e0a20003226d23f14b62666bd = L.marker(
+                [28.3652, 77.5411],
+                {}
+            ).addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+            var icon_d46c614d18345cfe649193727dfc5467 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "house", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b16f6f4e0a20003226d23f14b62666bd.setIcon(icon_d46c614d18345cfe649193727dfc5467);
+        
+    
+        var popup_2b51de04706e44311714db1769655f83 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_faa5e5ef0935446f1494489443a6d538 = $(`<div id="html_faa5e5ef0935446f1494489443a6d538" style="width: 100.0%; height: 100.0%;">Galgotias University</div>`)[0];
+                popup_2b51de04706e44311714db1769655f83.setContent(html_faa5e5ef0935446f1494489443a6d538);
+            
+        
+
+        marker_b16f6f4e0a20003226d23f14b62666bd.bindPopup(popup_2b51de04706e44311714db1769655f83)
+        ;
+
+        
+    
+    
+            marker_b16f6f4e0a20003226d23f14b62666bd.bindTooltip(
+                `<div>
+                     Click for more info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_18502acaceb859d8251cf4a7029b3cc3 = L.marker(
+                [28.474388, 77.50399],
+                {}
+            ).addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+            var icon_fda173af7db779dabafdb7f28f182a83 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_18502acaceb859d8251cf4a7029b3cc3.setIcon(icon_fda173af7db779dabafdb7f28f182a83);
+        
+    
+        var popup_db319f51a4c0509bb5ee5a014f6251dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_890ba1791e8e17071a2d953ef39a4fbe = $(`<div id="html_890ba1791e8e17071a2d953ef39a4fbe" style="width: 100.0%; height: 100.0%;">bla bla</div>`)[0];
+                popup_db319f51a4c0509bb5ee5a014f6251dd.setContent(html_890ba1791e8e17071a2d953ef39a4fbe);
+            
+        
+
+        marker_18502acaceb859d8251cf4a7029b3cc3.bindPopup(popup_db319f51a4c0509bb5ee5a014f6251dd)
+        ;
+
+        
+    
+    
+            marker_18502acaceb859d8251cf4a7029b3cc3.bindTooltip(
+                `<div>
+                     Click for more info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_46d471e3d9fcd85448ac3e737af386c9 = L.circle(
+                [28.474388, 77.50399],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 3}
+            ).addTo(map_b9397fc70217437a5c732cf2275876ed);
+        
+    
+        var popup_da5905a760afb769abbc357dddfbea96 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d21fc5a92619740420c396bd4902e75a = $(`<div id="html_d21fc5a92619740420c396bd4902e75a" style="width: 100.0%; height: 100.0%;">Central Park</div>`)[0];
+                popup_da5905a760afb769abbc357dddfbea96.setContent(html_d21fc5a92619740420c396bd4902e75a);
+            
+        
+
+        circle_46d471e3d9fcd85448ac3e737af386c9.bindPopup(popup_da5905a760afb769abbc357dddfbea96)
+        ;
+
+        
+    
+    
+            var tile_layer_1bf2b2379678dda29860ba99b8ad5cd3 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_52f9c97212a7e8df25c907badb2a649b = new L.Control.MiniMap(
+                tile_layer_1bf2b2379678dda29860ba99b8ad5cd3,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": false, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_b9397fc70217437a5c732cf2275876ed.addControl(mini_map_52f9c97212a7e8df25c907badb2a649b);
+        
+</script>
+</html>
