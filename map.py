@@ -30,12 +30,10 @@ for lat, lon, label in locations:
         popup=label,
         icon=folium.Icon(icon='info-sign', color='blue')
     ).add_to(map)
-    folium.Marker(
-    [28.3652, 77.5411], 
-    popup='Galgotias University',
-    tooltip='Click for more info',
-    icon=folium.Icon(icon='house')
-    ).add_to(map)
+    folium.Marker([28.365047694940156, 77.5410147397398],
+              popup="<h1>Galgotias University</h1><img src='galgotias.jpg' width = 400px",
+              tooltip="Galgotias University",
+              icon=folium.Icon(icon='book',icon_color='red', color='beige')).add_to(m)
 folium.Marker(
     [28.474388, 77.503990], 
     popup='bla bla',
